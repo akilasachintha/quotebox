@@ -2,10 +2,13 @@
   "expo": {
     "name": "quote-box",
     "slug": "quote-box",
+    "scheme": "com.quotebox",
     "version": "1.0.0",
+    "owner": "asynclabs",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "jsEngine": "hermes",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -21,10 +24,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.quotebox",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "30b9a2c3-a4fd-43f2-919a-9ba7c020c429"
+      }
     }
   }
 }
