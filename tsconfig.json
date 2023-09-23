@@ -3,8 +3,10 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "@components/*": ["./src/components/*"],
-      "@assets/*": ["./assets/*"]
+      "@components/*": ["./components/*"],
+      "@assets/*": ["./assets/*"],
+      "@screens/*": ["./screens/*"],
+      "@navigation/*": ["./navigation/*"]
     }
   }
 }
