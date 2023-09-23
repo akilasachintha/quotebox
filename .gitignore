@@ -6,8 +6,12 @@ yarn.lock
 
 # Expo
 .expo/
+.idea/
+.vs_code/
 dist/
 web-build/
+build/
+build-*.*
 
 # Native
 *.orig.*
