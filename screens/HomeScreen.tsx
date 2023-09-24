@@ -1,4 +1,4 @@
-import {ScrollView, StyleSheet} from "react-native";
+import {ScrollView} from "react-native";
 import {SafeAreaView} from "react-native-safe-area-context";
 import GeneratedCaptionsField from "@components/generatedCaptionsField/GeneratedCaptionsField";
 import SubSectionsTitleText from "@components/subSectionsTitleText/SubSectionsTitleText";
@@ -9,7 +9,7 @@ import CategoryItemsCardsList from "@components/categoryItemsCardsList/CategoryI
 export default function HomeScreen() {
     return (
         <SafeAreaView>
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <GeneratedCaptionsField/>
                 <SubSectionsTitleText title="Quote of the day"/>
                 <QuoteForTheDayField/>
@@ -22,5 +22,4 @@ export default function HomeScreen() {
     );
 }
 
-const styles = StyleSheet.create({});
 
