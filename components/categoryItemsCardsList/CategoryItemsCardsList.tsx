@@ -1,7 +1,8 @@
 import React from 'react';
-import {ScrollView} from 'react-native';
+import {ScrollView, StyleSheet} from 'react-native';
 import {paths} from '@helpers/assetsPaths';
 import CategoryItemCard from "@components/categoryItemCard/CategoryitemCard";
+import theme from "../../theme";
 
 interface CategoryItemsListItemType {
     id: number,
@@ -29,7 +30,9 @@ const categoryItemsList: CategoryItemsListItemType[] = [
 
 export default function CategoryItemsCardsList() {
     return (
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}
+                    style={styles.categoryItemsCardsListContainer}
+        >
             {categoryItemsList && categoryItemsList.length > 0 && categoryItemsList.map((item: CategoryItemsListItemType) => (
                 <CategoryItemCard
                     key={item.id}
@@ -40,3 +43,9 @@ export default function CategoryItemsCardsList() {
         </ScrollView>
     );
 }
+
+const styles = StyleSheet.create({
+    categoryItemsCardsListContainer: {
+        marginHorizontal: theme.screenHorizontalMargin,
+    }
+});

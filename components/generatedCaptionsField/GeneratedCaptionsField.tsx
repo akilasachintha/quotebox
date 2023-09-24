@@ -1,6 +1,7 @@
 import {Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import {paths} from "@helpers/assetsPaths";
 import {FontAwesome} from "@expo/vector-icons";
+import theme from "../../theme";
 
 export default function GeneratedCaptionsField() {
     return (
@@ -26,6 +27,8 @@ const styles = StyleSheet.create({
         borderRadius: 14,
         flexDirection: "row",
         padding: "5%",
+        marginTop: "5%",
+        marginHorizontal: theme.screenHorizontalMargin
     },
     generatedCaptionRightContainer: {
         alignItems: "flex-end",

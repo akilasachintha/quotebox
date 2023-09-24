@@ -1,7 +1,8 @@
 import React from 'react';
-import {ImageSourcePropType, ScrollView} from 'react-native';
+import {ImageSourcePropType, ScrollView, StyleSheet} from 'react-native';
 import TrendingPostCardItem from "@components/trendingPostCardItem/TrendingPostCardItem";
 import {paths} from "@helpers/assetsPaths";
+import theme from "../../theme";
 
 interface TrendingPostListItemType {
     id: number,
@@ -37,6 +38,7 @@ export default function TrendingPostsCardsList() {
             horizontal={true}
             alwaysBounceHorizontal={true}
             showsHorizontalScrollIndicator={false}
+            style={styles.trendingPostsCardsListContainer}
         >
             {trendingPostsList && trendingPostsList.length > 0 && trendingPostsList.map((item: TrendingPostListItemType) => (
                 <TrendingPostCardItem
@@ -49,3 +51,9 @@ export default function TrendingPostsCardsList() {
         </ScrollView>
     );
 }
+
+const styles = StyleSheet.create({
+    trendingPostsCardsListContainer: {
+        marginLeft: theme.screenHorizontalMargin,
+    }
+});
