@@ -1,18 +1,18 @@
 {
   "expo": {
-    "name": "quote-box",
+    "name": "QuoteBox",
     "slug": "quote-box",
     "scheme": "com.quotebox",
     "version": "1.0.0",
     "owner": "asynclabs",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "jsEngine": "hermes",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "cover",
+      "backgroundColor": "#E3342F"
     },
     "assetBundlePatterns": [
       "**/*"
