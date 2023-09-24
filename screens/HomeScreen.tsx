@@ -1,16 +1,26 @@
-import {StyleSheet, Text, View} from "react-native";
-
+import {ScrollView, StyleSheet} from "react-native";
+import {SafeAreaView} from "react-native-safe-area-context";
+import GeneratedCaptionsField from "@components/generatedCaptionsField/GeneratedCaptionsField";
+import SubSectionsTitleText from "@components/subSectionsTitleText/SubSectionsTitleText";
+import QuoteForTheDayField from "@components/quoteForTheDayField/QuoteForTheDayField";
+import TrendingPostsCardsList from "@components/trendingPostsCardsList/TrendingPostsCardsList";
+import CategoryItemsCardsList from "@components/categoryItemsCardsList/CategoryItemsCardsList";
 
 export default function HomeScreen() {
     return (
-        <View style={styles.container}>
-            <Text>Home Screen</Text>
-        </View>
+        <SafeAreaView>
+            <ScrollView>
+                <GeneratedCaptionsField/>
+                <SubSectionsTitleText title="Quote of the day"/>
+                <QuoteForTheDayField/>
+                <SubSectionsTitleText title="Trending posts"/>
+                <TrendingPostsCardsList/>
+                <SubSectionsTitleText title="Top Categories"/>
+                <CategoryItemsCardsList/>
+            </ScrollView>
+        </SafeAreaView>
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-});
+const styles = StyleSheet.create({});
+
