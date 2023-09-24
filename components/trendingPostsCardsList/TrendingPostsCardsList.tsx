@@ -1,11 +1,11 @@
 import React from 'react';
-import {ImageSourcePropType, ScrollView, StyleSheet} from 'react-native';
+import {FlatList, ImageSourcePropType, StyleSheet} from 'react-native';
 import TrendingPostCardItem from "@components/trendingPostCardItem/TrendingPostCardItem";
 import {paths} from "@helpers/assetsPaths";
 import theme from "../../theme";
 
 interface TrendingPostListItemType {
-    id: number,
+    id: string,
     source: ImageSourcePropType,
     quoteText: string,
     authorText: string
@@ -13,19 +13,19 @@ interface TrendingPostListItemType {
 
 const trendingPostsList: TrendingPostListItemType[] = [
     {
-        id: 1,
+        id: "1",
         source: paths["trending-post-1"],
         quoteText: "“This is the first quote”",
         authorText: "Mandela",
     },
     {
-        id: 2,
+        id: "2",
         source: paths["image-day"],
         quoteText: "“This is the second quote”",
         authorText: "Einstein",
     },
     {
-        id: 3,
+        id: "3",
         source: paths["trending-post-1"],
         quoteText: "“This is the third quote”",
         authorText: "Shakespeare",
@@ -34,21 +34,22 @@ const trendingPostsList: TrendingPostListItemType[] = [
 
 export default function TrendingPostsCardsList() {
     return (
-        <ScrollView
+        <FlatList
+            data={trendingPostsList}
             horizontal={true}
-            alwaysBounceHorizontal={true}
             showsHorizontalScrollIndicator={false}
             style={styles.trendingPostsCardsListContainer}
-        >
-            {trendingPostsList && trendingPostsList.length > 0 && trendingPostsList.map((item: TrendingPostListItemType) => (
-                <TrendingPostCardItem
-                    key={item.id}
-                    source={item.source}
-                    quoteText={item.quoteText}
-                    authorText={item.authorText}
-                />
-            ))}
-        </ScrollView>
+            keyExtractor={item => item.id}
+            renderItem={
+                ({item}) => (
+                    <TrendingPostCardItem
+                        source={item.source}
+                        quoteText={item.quoteText}
+                        authorText={item.authorText}
+                    />
+                )
+            }>
+        </FlatList>
     );
 }
 

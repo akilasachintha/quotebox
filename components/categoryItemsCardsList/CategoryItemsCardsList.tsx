@@ -1,28 +1,28 @@
 import React from 'react';
-import {ScrollView, StyleSheet} from 'react-native';
+import {FlatList, StyleSheet} from 'react-native';
 import {paths} from '@helpers/assetsPaths';
 import CategoryItemCard from "@components/categoryItemCard/CategoryitemCard";
 import theme from "../../theme";
 
 interface CategoryItemsListItemType {
-    id: number,
+    id: string,
     imageSource: any,
     categoryText: string,
 }
 
 const categoryItemsList: CategoryItemsListItemType[] = [
     {
-        id: 1,
+        id: "1",
         imageSource: paths['category-romantic'],
         categoryText: 'Motivational Quotes 1',
     },
     {
-        id: 2,
+        id: "2",
         imageSource: paths['category-romantic'],
         categoryText: 'Motivational Quotes 2',
     },
     {
-        id: 3,
+        id: "3",
         imageSource: paths['category-romantic'],
         categoryText: 'Motivational Quotes 3',
     },
@@ -30,17 +30,19 @@ const categoryItemsList: CategoryItemsListItemType[] = [
 
 export default function CategoryItemsCardsList() {
     return (
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}
-                    style={styles.categoryItemsCardsListContainer}
-        >
-            {categoryItemsList && categoryItemsList.length > 0 && categoryItemsList.map((item: CategoryItemsListItemType) => (
-                <CategoryItemCard
-                    key={item.id}
-                    imageSource={item.imageSource}
-                    categoryText={item.categoryText}
-                />
-            ))}
-        </ScrollView>
+        <FlatList horizontal={true} showsHorizontalScrollIndicator={false}
+                  style={styles.categoryItemsCardsListContainer}
+                  data={categoryItemsList}
+                  keyExtractor={item => item.id}
+                  renderItem={
+                      ({item}) => (
+                          <CategoryItemCard
+                              imageSource={item.imageSource}
+                              categoryText={item.categoryText}
+                          />
+                      )
+                  }>
+        </FlatList>
     );
 }
 

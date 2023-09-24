@@ -1,18 +1,14 @@
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import HomeScreen from "@screens/HomeScreen";
+import TabNavigator from "@navigation/TabNavigator";
 
 const Stack = createNativeStackNavigator();
-export default function StackNavigatorHome() {
-
+export default function StackNavigator() {
     return (
         <Stack.Navigator>
             <Stack.Group screenOptions={{
                 headerShown: false,
-                contentStyle: {
-                    backgroundColor: "#fff",
-                }
             }}>
-                <Stack.Screen name="Home" component={HomeScreen}/>
+                <Stack.Screen name="HomeTab" component={TabNavigator}/>
             </Stack.Group>
         </Stack.Navigator>
     )

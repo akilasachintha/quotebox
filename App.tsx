@@ -1,12 +1,12 @@
 import {NavigationContainer} from "@react-navigation/native";
-import StackNavigatorHome from "@navigation/StackNavigatorHome";
+import StackNavigator from "@navigation/StackNavigator";
 import {StatusBar} from "expo-status-bar";
 
 export default function App() {
   return (
       <NavigationContainer>
               <StatusBar style="dark"/>
-              <StackNavigatorHome/>
+              <StackNavigator/>
       </NavigationContainer>
   );
 }
