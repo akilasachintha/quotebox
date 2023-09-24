@@ -46,6 +46,6 @@ export default function CategoryItemsCardsList() {
 
 const styles = StyleSheet.create({
     categoryItemsCardsListContainer: {
-        marginHorizontal: theme.screenHorizontalMargin,
+        marginLeft: theme.screenHorizontalMargin,
     }
 });

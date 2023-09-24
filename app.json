@@ -1,18 +1,29 @@
 {
   "expo": {
     "name": "QuoteBox",
+    "description": "A simple app to store your favorite quotes",
     "slug": "quote-box",
+    "owner": "asynclabs",
+    "privacy": "public",
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "scheme": "com.quotebox",
     "version": "1.0.0",
-    "owner": "asynclabs",
     "orientation": "portrait",
+    "backgroundColor": "#ffffff",
+    "primaryColor": "#E3342F",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
     "jsEngine": "hermes",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "cover",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#E3342F",
+      "waitForLoadingScreen": true,
+      "loadingScreenImage": "./assets/splash.png",
+      "loadingScreenBackgroundColor": "#E3342F"
     },
     "assetBundlePatterns": [
       "**/*"

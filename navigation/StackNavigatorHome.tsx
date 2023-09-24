@@ -1,10 +1,8 @@
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import HomeScreen from "@screens/HomeScreen";
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 const Stack = createNativeStackNavigator();
 export default function StackNavigatorHome() {
-    const insets = useSafeAreaInsets();
 
     return (
         <Stack.Navigator>
