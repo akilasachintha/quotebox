@@ -52,23 +52,24 @@ const styles = StyleSheet.create({
         elevation: 4,
         borderTopRightRadius: 30,
         borderTopLeftRadius: 30,
+        paddingHorizontal: 5,
+        paddingVertical: 20,
     },
     mainItemContainer: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        paddingVertical: 14,
         width: width / 3,
     },
     buttonContainer: {
         borderRadius: 30,
-        paddingHorizontal: 20
+        paddingVertical: "4%",
+        paddingHorizontal: width * 0.04,
     },
     itemContainer: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        paddingVertical: 10,
         borderRadius: 20,
     },
     itemText: {
