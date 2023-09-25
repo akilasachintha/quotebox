@@ -1,7 +1,6 @@
 import {DefaultTheme, NavigationContainer} from "@react-navigation/native";
 import StackNavigator from "@navigation/StackNavigator";
 import * as SplashScreen from 'expo-splash-screen';
-import {StatusBar} from "expo-status-bar";
 import {SafeAreaView} from "react-native-safe-area-context";
 import {useCallback, useEffect, useState} from "react";
 
@@ -32,7 +31,6 @@ export default function App() {
 
   return (
       <NavigationContainer theme={navTheme}>
-          <StatusBar style="dark"/>
           <SafeAreaView style={{flex: 1}} onLayout={onLayoutRootView}>
               <StackNavigator/>
           </SafeAreaView>

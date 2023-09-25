@@ -5,10 +5,12 @@ import QuoteForTheDayField from "@components/quoteForTheDayField/QuoteForTheDayF
 import TrendingPostsCardsList from "@components/trendingPostsCardsList/TrendingPostsCardsList";
 import CategoryItemsCardsList from "@components/categoryItemsCardsList/CategoryItemsCardsList";
 import TabBarHeight from "@components/tabBar/TabBarHeight";
+import {StatusBar} from "expo-status-bar";
 
 export default function HomeScreen() {
     return (
         <View style={{flex: 1}}>
+            <StatusBar style="dark"/>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <GeneratedCaptionsField/>
                 <SubSectionsTitleText title="Quote of the day"/>
