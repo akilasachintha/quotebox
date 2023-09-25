@@ -1,9 +1,9 @@
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-import HomeScreen from "@screens/home/HomeScreen";
 import TabBar from "@components/tabBar/TabBar";
 import React from "react";
 import FavoritesScreen from "@screens/favorites/FavoritesScreen";
 import SettingsScreen from "@screens/settings/SettingsScreen";
+import StackNavigatorHome from "@navigation/StackNavigatorHome";
 
 const Tab = createBottomTabNavigator();
 type FeatherIconName = 'home' | 'heart' | 'settings';
@@ -16,7 +16,7 @@ export interface ITab {
 }
 
 const tabs: ITab[] = [
-    {id: 0, name: 'Home', icon: 'home', component: HomeScreen},
+    {id: 0, name: 'Home', icon: 'home', component: StackNavigatorHome},
     {id: 1, name: 'Favorites', icon: 'heart', component: FavoritesScreen},
     {id: 2, name: 'Settings', icon: 'settings', component: SettingsScreen}
 ];

@@ -9,7 +9,7 @@ export default function GeneratedCaptionsField() {
 
     const handlePressContinueButton = () => {
         // @ts-ignore
-        navigation.navigate('CaptionsList', {screen: 'HomeTab'});
+        navigation.navigate('CaptionsListScreen');
     }
 
     return (

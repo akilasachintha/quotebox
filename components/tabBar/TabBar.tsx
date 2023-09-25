@@ -45,7 +45,6 @@ const styles = StyleSheet.create({
     mainContainer: {
         position: 'absolute',
         bottom: 0,
-        zIndex: 1,
         flexDirection: 'row',
         backgroundColor: "#fff",
         shadowColor: "#000",
