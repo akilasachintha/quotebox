@@ -1,10 +1,10 @@
 import {paths} from "@helpers/assetsPaths";
-import {ImageBackground, StyleSheet, Text, View} from "react-native";
+import {ImageBackground, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import theme from "../../theme";
 
 export default function QuoteForTheDayField() {
     return (
-        <View style={styles.quoteForTheDayContainer}>
+        <TouchableOpacity style={styles.quoteForTheDayContainer} activeOpacity={0.8}>
             <ImageBackground source={paths["image-day"]} style={styles.quoteOfTheDayViewContainer}
                              imageStyle={styles.quoteForTheDayImage}>
                 <View style={styles.quoteOfTheDayImageOverlay}>
@@ -16,7 +16,7 @@ export default function QuoteForTheDayField() {
                     </Text>
                 </View>
             </ImageBackground>
-        </View>
+        </TouchableOpacity>
     );
 }
 

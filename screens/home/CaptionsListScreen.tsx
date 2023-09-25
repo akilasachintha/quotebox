@@ -1,9 +1,19 @@
-import {Text, View} from "react-native";
+import {StyleSheet, View} from "react-native";
+import CaptionsListField from "@components/captionsListField/CaptionsListField";
+
 
 export default function CaptionsListScreen() {
     return (
-        <View>
-            <Text>Captions List</Text>
+        <View style={styles.container}>
+            <CaptionsListField/>
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "#fff",
+        marginTop: "5%",
+    },
+});

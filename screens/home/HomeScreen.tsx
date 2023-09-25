@@ -11,40 +11,40 @@ import * as SplashScreen from "expo-splash-screen";
 SplashScreen.preventAutoHideAsync().catch((e) => console.error(e));
 
 export default function HomeScreen() {
-    const [appIsReady, setAppIsReady] = useState(false);
-    const fadeAnim = useRef(new Animated.Value(0.5)).current;
+    const [isAppReady, setIsAppReady] = useState(false);
+    const fadeAnim = useRef(new Animated.Value(0.7)).current;
 
     const fadeIn = () => {
         Animated.timing(fadeAnim, {
             toValue: 1,
-            duration: 1000,
+            duration: 400,
             useNativeDriver: false,
             easing: Easing.bezier(0.17, 0.67, 0.83, 0.67),
         }).start();
     };
 
     const onLayoutRootView = useCallback(async () => {
-        if (appIsReady) {
+        if (isAppReady) {
             await SplashScreen.hideAsync();
             fadeIn();
         }
-    }, [appIsReady]);
+    }, [isAppReady]);
 
     useEffect(() => {
         async function prepare() {
             try {
-                await new Promise(resolve => setTimeout(resolve, 2000));
+                await new Promise(resolve => setTimeout(resolve, 1000));
             } catch (e) {
                 console.warn(e);
             } finally {
-                setAppIsReady(true);
+                setIsAppReady(true);
             }
         }
 
         prepare().catch((e) => console.error(e));
     }, []);
 
-    if (!appIsReady) {
+    if (!isAppReady) {
         return null;
     }
 

@@ -41,8 +41,9 @@ export default function CategoryItemsCardsList() {
                               categoryText={item.categoryText}
                           />
                       )
-                  }>
-        </FlatList>
+                  }
+        />
+
     );
 }
 

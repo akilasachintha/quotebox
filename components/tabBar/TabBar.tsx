@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import {Animated, Dimensions, Easing, Pressable, StyleSheet, Text, View} from 'react-native';
+import {Animated, Dimensions, Easing, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {Feather} from "@expo/vector-icons";
 import {ITab} from "@navigation/TabNavigator";
 
@@ -12,12 +12,12 @@ interface ITabBarProps {
 }
 
 export default function TabBar({state, navigation, tabs}: ITabBarProps) {
-    const fadeAnim = useRef(new Animated.Value(0)).current;
+    const fadeAnim = useRef(new Animated.Value(0.5)).current;
 
     const fadeIn = () => {
         Animated.timing(fadeAnim, {
             toValue: 1,
-            duration: 1000,
+            duration: 400,
             useNativeDriver: true,
             easing: Easing.out(Easing.exp),
         }).start();
@@ -29,15 +29,24 @@ export default function TabBar({state, navigation, tabs}: ITabBarProps) {
                 const isFocused = state.index === tab.id;
 
                 const onPress = () => {
+                    if (isFocused) {
+                        if (tab.name === 'Home') {
+                            navigation.navigate('HomeScreen');
+                        }
+                    }
+
                     if (!isFocused) {
-                        fadeIn();
+                        if (tab.name === 'Home') {
+                            navigation.navigate('HomeScreen');
+                        }
                         navigation.navigate(tab.name);
                     }
                 };
 
                 return (
                     <View key={tab.id} style={styles.mainItemContainer}>
-                        <Pressable
+                        <TouchableOpacity
+                            activeOpacity={0.8}
                             onPress={onPress}
                             style={[styles.buttonContainer, {backgroundColor: isFocused ? "rgba(244, 80, 80, 0.2)" : "#fff"}]}
                         >
@@ -45,7 +54,7 @@ export default function TabBar({state, navigation, tabs}: ITabBarProps) {
                                 <Feather name={tab.icon} size={24} color={isFocused ? "#F45050" : "#C1C1C1"}/>
                                 {isFocused && <Text style={styles.itemText}>{tab.name}</Text>}
                             </View>
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
                 );
             })}

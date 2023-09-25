@@ -48,8 +48,8 @@ export default function TrendingPostsCardsList() {
                         authorText={item.authorText}
                     />
                 )
-            }>
-        </FlatList>
+            }
+        />
     );
 }
 
