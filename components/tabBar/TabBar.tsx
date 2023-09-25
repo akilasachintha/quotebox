@@ -1,5 +1,5 @@
-import React from 'react';
-import {Dimensions, Pressable, StyleSheet, Text, View} from 'react-native';
+import React, {useRef} from 'react';
+import {Animated, Dimensions, Easing, Pressable, StyleSheet, Text, View} from 'react-native';
 import {Feather} from "@expo/vector-icons";
 import {ITab} from "@navigation/TabNavigator";
 
@@ -12,13 +12,25 @@ interface ITabBarProps {
 }
 
 export default function TabBar({state, navigation, tabs}: ITabBarProps) {
+    const fadeAnim = useRef(new Animated.Value(0)).current;
+
+    const fadeIn = () => {
+        Animated.timing(fadeAnim, {
+            toValue: 1,
+            duration: 1000,
+            useNativeDriver: true,
+            easing: Easing.out(Easing.exp),
+        }).start();
+    };
+
     return (
-        <View style={styles.mainContainer}>
+        <Animated.View style={[styles.mainContainer, {opacity: fadeAnim}]} onLayout={fadeIn}>
             {tabs.map((tab) => {
                 const isFocused = state.index === tab.id;
 
                 const onPress = () => {
                     if (!isFocused) {
+                        fadeIn();
                         navigation.navigate(tab.name);
                     }
                 };
@@ -37,7 +49,7 @@ export default function TabBar({state, navigation, tabs}: ITabBarProps) {
                     </View>
                 );
             })}
-        </View>
+        </Animated.View>
     );
 };
 
@@ -55,7 +67,7 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 30,
         borderTopLeftRadius: 30,
         paddingHorizontal: 5,
-        paddingVertical: 20,
+        paddingVertical: 15,
     },
     mainItemContainer: {
         flex: 1,
@@ -65,7 +77,7 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         borderRadius: 30,
-        paddingVertical: "4%",
+        paddingVertical: "8%",
         paddingHorizontal: width * 0.04,
     },
     itemContainer: {

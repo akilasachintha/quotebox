@@ -4,6 +4,7 @@ import TabNavigator from "@navigation/TabNavigator";
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export type RootStackParamList = {
+    Splash: undefined,
     HomeTab: undefined,
     CaptionsList: undefined,
 }
