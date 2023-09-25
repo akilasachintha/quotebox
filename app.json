@@ -13,14 +13,13 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "backgroundColor": "#ffffff",
-    "primaryColor": "#E3342F",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
     "jsEngine": "hermes",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#E3342F"
+      "image": "./assets/assets/splash-with-background.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": [
       "**/*"
