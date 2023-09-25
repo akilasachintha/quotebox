@@ -18,7 +18,7 @@
     "jsEngine": "hermes",
     "splash": {
       "image": "./assets/splash-with-background.png",
-      "resizeMode": "cover",
+      "resizeMode": "native",
       "backgroundColor": "#E3342F"
     },
     "assetBundlePatterns": [

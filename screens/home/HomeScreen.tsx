@@ -34,8 +34,6 @@ export default function HomeScreen() {
                 <TrendingPostsCardsList/>
                 <SubSectionsTitleText title="Top Categories"/>
                 <CategoryItemsCardsList/>
-                <SubSectionsTitleText title="Top Categories"/>
-                <CategoryItemsCardsList/>
                 <TabBarHeight/>
             </ScrollView>
         </Animated.View>
