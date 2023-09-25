@@ -32,6 +32,7 @@ export default function App() {
 
   return (
       <NavigationContainer theme={navTheme}>
+          <StatusBar style="dark"/>
           <SafeAreaView style={{flex: 1}} onLayout={onLayoutRootView}>
               <StackNavigator/>
           </SafeAreaView>

@@ -17,9 +17,9 @@
     "userInterfaceStyle": "automatic",
     "jsEngine": "hermes",
     "splash": {
-      "image": "./assets/assets/splash-with-background.png",
+      "image": "./assets/splash.png",
       "resizeMode": "cover",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#E3342F"
     },
     "assetBundlePatterns": [
       "**/*"
