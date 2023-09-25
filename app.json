@@ -20,10 +20,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "cover",
-      "backgroundColor": "#E3342F",
-      "waitForLoadingScreen": true,
-      "loadingScreenImage": "./assets/splash.png",
-      "loadingScreenBackgroundColor": "#E3342F"
+      "backgroundColor": "#E3342F"
     },
     "assetBundlePatterns": [
       "**/*"

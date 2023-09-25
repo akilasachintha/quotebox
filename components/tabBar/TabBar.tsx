@@ -43,13 +43,16 @@ export default function TabBar({state, navigation, tabs}: ITabBarProps) {
 
 const styles = StyleSheet.create({
     mainContainer: {
+        position: 'absolute',
+        bottom: 0,
+        zIndex: 1,
         flexDirection: 'row',
         backgroundColor: "#fff",
         shadowColor: "#000",
-        shadowOffset: {width: 0, height: 2},
-        shadowOpacity: 0.18,
-        shadowRadius: 2.00,
-        elevation: 4,
+        shadowOffset: {width: 0, height: 4},
+        shadowOpacity: 0.5,
+        shadowRadius: 5,
+        elevation: 24,
         borderTopRightRadius: 30,
         borderTopLeftRadius: 30,
         paddingHorizontal: 5,

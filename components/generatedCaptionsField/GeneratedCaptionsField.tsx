@@ -2,14 +2,22 @@ import {Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import {paths} from "@helpers/assetsPaths";
 import {FontAwesome} from "@expo/vector-icons";
 import theme from "../../theme";
+import {useNavigation} from "@react-navigation/native";
 
 export default function GeneratedCaptionsField() {
+    const navigation = useNavigation();
+
+    const handlePressContinueButton = () => {
+        // @ts-ignore
+        navigation.navigate('CaptionsList', {screen: 'HomeTab'});
+    }
+
     return (
         <View style={styles.generateCaptionContainer}>
             <Image source={paths["social-img"]}/>
             <View style={styles.generatedCaptionRightContainer}>
                 <Text style={styles.generatedCaptionsRightTopText}>Generate captions for social media</Text>
-                <TouchableOpacity style={styles.generateCaptionRightBottomButton}>
+                <TouchableOpacity style={styles.generateCaptionRightBottomButton} onPress={handlePressContinueButton}>
                     <View style={styles.generatedCaptionsRightBottomButtonTextAndIconContainer}>
                         <Text style={styles.generatedCaptionsRightBottomButtonText}>Continue</Text>
                         <FontAwesome name="angle-double-right" size={20} color="#F66A6A"/>
